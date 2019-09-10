@@ -6,7 +6,9 @@ BeltStats = namedtuple('BeltStats', 'score ninjas')
 ninja_belts = {'yellow': BeltStats(50, 11),
                'orange': BeltStats(100, 7),
                'green': BeltStats(175, 1),
-               'blue': BeltStats(250, 5)}
+               'blue': BeltStats(250, 5),
+               'brown': BeltStats(400, 2),
+               'white': BeltStats(600, 5)}
 
 
 def get_total_points(belts=ninja_belts):
@@ -23,7 +25,10 @@ def get_total_points(belts=ninja_belts):
        them all over the place!)
 
        Return the total number of points int from the function."""
-    print(ninja_belts['yellow'].__getattribute__)
+    toty = 0
+    for k, v in belts.items():
+        toty += v.score * v.ninjas
+    return toty
 
 
 print(get_total_points(ninja_belts))
