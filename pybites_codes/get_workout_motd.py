@@ -29,20 +29,3 @@ def get_workout_motd(day):
 
 
 print(get_workout_motd('Sunday'))
-
-
-#     try:
-#         day = day.title()
-#         if day in workout_schedule.keys():
-#             v = workout_schedule[day]
-#             if v == rest:
-#                 return chill
-#             else:
-#                 return go_train
-#     except KeyError:
-#         print('KeyError')
-#
-#
-# print(get_workout_motd('Tick'))
-
-# print(workout_schedule['MONDAY'])
