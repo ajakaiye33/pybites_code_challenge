@@ -1,8 +1,16 @@
-from collections import Counter
+# python Morsels Challenge
 
 
 def comapact(lst):
-    return list(set([i for i in lst]))
+    """
+    Return new iterable with adjacent duplicate values removed
+    """
+    dup = []
+    for indx, item in enumerate(lst):
+            if indx == 0 or item != lst[indx-1]:
+                dup.append(item)
+        return dup
+
 
 
 print(comapact([1, 1, 1]))
