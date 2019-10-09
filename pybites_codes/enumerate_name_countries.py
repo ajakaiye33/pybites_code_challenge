@@ -2,7 +2,7 @@ names = 'Julian Bob PyBites Dante Martin Rodolfo'.split()
 countries = 'Australia Spain Global Argentina USA Mexico'.split()
 
 
-def enumerate_names_countries():
+def enumerate_names_countries(n, c):
     """Outputs:
        1. Julian     Australia
        2. Bob        Spain
@@ -10,9 +10,8 @@ def enumerate_names_countries():
        4. Dante      Argentina
        5. Martin     USA
        6. Rodolfo    Mexico"""
-    for i, items in enumerate(zip(names, countries), 1):
-        res = '{0}.  {1:<11}     {2:<11}'.format(i, items[0], items[1])
-        print(res)
+    for i, (name, country) in enumerate(zip(names, countries), 1):
+        print('{0}. {1:<10} {2}'.format(i, name, country))
 
 
-print(enumerate_names_countries())
+print(enumerate_names_countries(names, countries))
