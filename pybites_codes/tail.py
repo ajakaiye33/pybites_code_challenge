@@ -1,4 +1,4 @@
-
+from collections import deque
 # Morsel code challenge
 # challenge: make a function that takes a sequence(like a list string, or tuple)
 # and a number n and return the last n element from the given sequence, as a list
@@ -28,11 +28,17 @@
 # bonus 1: As a bonus, make your function return an empty list for negative values of n
 # bonus 2: make sure your function works with any iterable, not just sequences.
 
-def tail(seq, n):
+# def tail(seq, n):
+#     if n <= 0:
+#         return list(seq)[:0]
+#     else:
+#         return list(seq)[-n:]
+#
+
+def tail(iterable, n):
     if n <= 0:
-        return list(seq)[:0]
-    else:
-        return list(seq)[-n:]
+        return []
+    return list(deque(iterable, maxlen=n))
 
 
 print(tail([1, 2, 3, 4, 5], 3))
